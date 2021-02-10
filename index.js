@@ -4,23 +4,40 @@ const text = document.querySelector('.text');
 const btn = document.querySelector(".add-btn");
 const list = document.querySelector('.list');
 
-text.addEventListener('focus', () => {
-  text.value = '';
-})
-console.log(text.value);
 
 btn.addEventListener('click', updateValue);
 
-function updateValue(e) {
-  e.preventDefault()
-  let item = text.value;
-  if (item.length > 0) {
-    let li = document.createElement('li');
-    let newItem = list.appendChild(li);
-    newItem.innerHTML = `${item} <i class="far fa-trash-alt"></i>`;
-  } else {
-    text.style.border = "solid 2px red"
-  }
+text.addEventListener('click', () => {
   text.value = '';
-}
+})
 
+function updateValue(e) {
+  e.preventDefault();
+
+  if (text.value.length > 0) {
+    const newRow = document.createElement('div');
+    const item = document.createElement('span');
+    const deleteBtn = document.createElement('button');
+
+    newRow.setAttribute('class', 'new-row');
+    item.setAttribute('class', 'item')
+
+    item.innerHTML = text.value;
+    deleteBtn.setAttribute('class', 'delete-btn');
+    deleteBtn.innerHTML = `<i class="far fa-trash-alt"></i>`;
+
+    newRow.appendChild(item);
+    newRow.appendChild(deleteBtn);
+    list.appendChild(newRow);
+
+
+    deleteBtn.addEventListener('click', () => {
+      list.removeChild(newRow);
+    })
+    text.value = '';
+    text.focus();
+  } else {
+    text.style.border = "2px solid red";
+  }
+
+}
