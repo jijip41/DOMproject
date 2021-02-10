@@ -14,10 +14,13 @@ btn.addEventListener('click', updateValue);
 function updateValue(e) {
   e.preventDefault()
   let item = text.value;
-  let li = document.createElement('li');
-  let newItem = list.appendChild(li);
-  newItem.innerHTML = `${item} <i class="far fa-trash-alt"></i>`;
-
-
+  if (item.length > 0) {
+    let li = document.createElement('li');
+    let newItem = list.appendChild(li);
+    newItem.innerHTML = `${item} <i class="far fa-trash-alt"></i>`;
+  } else {
+    text.style.border = "solid 2px red"
+  }
+  text.value = '';
 }
 
