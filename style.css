@@ -35,11 +35,12 @@ body {
   top: 10px;
 }
 
-li {
+.new-row {
   display: flex;
   font-size: 20px;
   justify-content: space-between;
 }
+
 .delete-btn {
 border-style: none;
 background-color: white;
@@ -54,6 +55,13 @@ background-color: white;
 .delete-btn:focus {
   outline: 0;
   }
+
+.line {
+  display: block;
+  height: 2px;
+   border-color: black ;
+  }
+
 
 .text {
   width: 100%;
