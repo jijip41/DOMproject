@@ -39,8 +39,21 @@ li {
   display: flex;
   font-size: 20px;
   justify-content: space-between;
-
 }
+.delete-btn {
+border-style: none;
+background-color: white;
+}
+
+.delete-btn:hover {
+  color: red;
+  border-style: none;
+  cursor: pointer;
+  }
+  
+.delete-btn:focus {
+  outline: 0;
+  }
 
 .text {
   width: 100%;
