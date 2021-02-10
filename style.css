@@ -48,7 +48,6 @@ align-items: center;
 
 .add-btn:hover{
   cursor: pointer;
-
 }
 .add-btn:focus {
   outline:0;
