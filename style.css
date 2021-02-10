@@ -3,11 +3,8 @@ body {
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
   width: 400px;
-  height: 500px;
   border-radius: 15px;
   background-color: white;
   margin: auto;
@@ -15,8 +12,8 @@ body {
 
 .header {
   display: flex;
-justify-content: center;  
-align-items: center;
+  justify-content: center;  
+  align-items: center;
   height: 40px;
   color: white;
   font-size: 20px;
@@ -26,11 +23,31 @@ align-items: center;
   text-align: center;
 }
 
+#list{
+  height: 500px;
+  position: relative;
+  overflow: scroll;
+}
+
+.list {
+  padding: 0 40px 0 40px;
+  position: relative;
+  top: 10px;
+}
+
+li {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+
+}
+
 .text {
   width: 100%;
   box-sizing: border-box;
   background-color: white;
 }
+
 .btn-section {
   background: linear-gradient(120deg, powderblue, pink);
   border-bottom-left-radius: 15px;
